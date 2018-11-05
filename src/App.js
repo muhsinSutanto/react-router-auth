@@ -28,6 +28,13 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  handleLogout = () => {
+    this.setState({
+      isAuthenticated: false
+    });
+    localStorage.removeItem('token')
+  }
+
   render() {
     return (
       <Router>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import DetailEmployees from './DetailEmployees';
 
 class Employees extends Component {
     constructor(props) {
@@ -34,15 +35,9 @@ class Employees extends Component {
         return ( 
             <div>
                 <p>list of Employees</p>
-                <p>{this.state.employees.map((employee, index) => {
-                    return(
-                        <ul>
-                            <li key={index}>first name : {employee.first_name} </li>
-                            <li key={index}>last name : {employee.last_name} </li>
-                            <hr />
-                        </ul>
-                    )
-                })}</p>
+                {this.state.employees.map((employee, index => {
+                    return <DetailEmployees />
+                }))}
             </div>
              );
     }
